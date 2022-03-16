@@ -9,9 +9,11 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { MessageDto } from 'src/models/message/MessageDto';
 import { MessagesService } from './messages.service';
 
+@ApiTags('messages')
 @Controller('messages')
 export class MessagesController {
   constructor(private messagesService: MessagesService) {}
