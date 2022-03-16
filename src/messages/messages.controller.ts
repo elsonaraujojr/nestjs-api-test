@@ -42,8 +42,6 @@ export class MessagesController {
 
   @Delete(':id')
   delete(@Param('id', ParseIntPipe) id) {
-    console.log(typeof id);
-
     return this.messagesService.delete(id).catch((e) => {
       throw new NotFoundException(e.message);
     });
